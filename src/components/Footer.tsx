@@ -61,9 +61,16 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-white/5">
-          <p className="text-zinc-600 text-xs">
-            © {year} North & Neural AI. All rights reserved.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+            <p className="text-zinc-600 text-xs">
+              © {year} North & Neural AI. All rights reserved.
+            </p>
+            <span className="hidden sm:block text-zinc-700 text-xs">·</span>
+            <p className="text-zinc-600 text-xs">
+              Founded by{' '}
+              <span className="text-zinc-400 font-medium">Vidhan Pachauri</span>
+            </p>
+          </div>
           <div className="flex items-center gap-5">
             <a href={MAILTO} className="text-zinc-500 hover:text-white transition-colors" aria-label="Email">
               <i className="fa-solid fa-envelope text-sm"></i>
