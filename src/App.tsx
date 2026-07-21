@@ -14,8 +14,32 @@ import Footer from './components/Footer';
 import About from './components/About';
 import FAQ from './components/FAQ';
 import Legal from './components/Legal';
+import { useSEO } from './hooks/useSEO';
 
 type Page = 'home' | 'about' | 'faq' | 'legal';
+
+const SEO_PER_PAGE: Record<Page, { title: string; description: string; path: string }> = {
+  home: {
+    title: 'Let AI Do All The Work',
+    description: 'A marketplace of 20+ done-for-you AI services — from brand identities to automation systems. Place an order, receive the finished deliverable in days.',
+    path: '',
+  },
+  about: {
+    title: 'About Us',
+    description: 'North & Neural AI was built to fix the frustration of getting quality work done. Pick a service, place your order, get a finished deliverable — no back-and-forth.',
+    path: '/#about',
+  },
+  faq: {
+    title: 'FAQ',
+    description: 'Answers to common questions about ordering, revisions, refunds, payment methods, custom services, and subscription plans at North & Neural AI.',
+    path: '/#faq',
+  },
+  legal: {
+    title: 'Terms & Refund Policy',
+    description: 'Refund policy, terms of service, and privacy statement for North & Neural AI. Full refunds within 7 days if the deliverable has not been approved.',
+    path: '/#legal',
+  },
+};
 
 function App() {
   const [page, setPage] = useState<Page>('home');
@@ -42,6 +66,9 @@ function App() {
     setPage(p);
     window.scrollTo(0, 0);
   };
+
+  const seo = SEO_PER_PAGE[page];
+  useSEO(seo);
 
   return (
     <ThemeProvider>

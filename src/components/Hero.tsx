@@ -1,3 +1,5 @@
+import ActiveProjectsBadge from './ActiveProjectsBadge';
+
 const MAILTO = `mailto:hello.northandneural@gmail.com?subject=Service%20Order&body=Hi%2C%20I%27d%20like%20to%20order%3A%20%5Bservice%20name%5D`;
 
 export default function Hero() {
@@ -14,7 +16,7 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 glass-card px-4 py-2 mb-8 text-xs font-medium text-muted tracking-wide uppercase fade-in">
+        <div className="inline-flex items-center gap-2 glass-card px-4 py-2 mb-6 text-xs font-medium text-muted tracking-wide uppercase fade-in">
           <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
           Powered by Advanced AI Technology
         </div>
@@ -30,6 +32,11 @@ export default function Hero() {
           A marketplace of 20+ done-for-you services — from brand identities to automation systems — delivered by elite AI teams. Place an order. Receive the finished deliverable. No back-and-forth freelancing.
         </p>
 
+        {/* Active projects badge */}
+        <div className="mb-8 fade-in">
+          <ActiveProjectsBadge />
+        </div>
+
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14 fade-in">
           <a
@@ -42,7 +49,7 @@ export default function Hero() {
             href={MAILTO}
             className="glass-card border border-strong text-base font-semibold px-8 py-3.5 rounded-xl text-base w-full sm:w-auto text-center transition-all duration-200 hover:border-blue-500/40"
           >
-            Start Free Trial
+            Order Now
           </a>
         </div>
 

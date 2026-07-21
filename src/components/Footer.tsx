@@ -12,12 +12,13 @@ export default function Footer({ navigate }: FooterProps) {
       { label: 'Social Media & Content', href: '#services' },
       { label: 'Websites & Digital Presence', href: '#services' },
       { label: 'Design & Branding', href: '#services' },
+      { label: 'Business Research & Strategy', href: '#services' },
       { label: 'Automation & Productivity', href: '#services' },
+      { label: 'Video & Multimedia', href: '#services' },
     ],
     Company: [
       { label: 'How It Works', href: '#how-it-works' },
       { label: 'Pricing', href: '#pricing' },
-      { label: 'Reviews', href: '#trust' },
     ],
     Contact: [
       { label: 'hello.northandneural@gmail.com', href: MAILTO },
@@ -39,7 +40,7 @@ export default function Footer({ navigate }: FooterProps) {
               </span>
             </button>
             <p className="text-muted text-sm leading-relaxed max-w-xs">
-              A marketplace of done-for-you AI services. Place an order. Receive the finished deliverable.
+              A marketplace of 20+ done-for-you AI services — from brand identities to automation systems — delivered by elite AI teams. Place an order. Receive the finished deliverable. No back-and-forth freelancing.
             </p>
           </div>
 

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0a12"/>
+      <stop offset="100%" stop-color="#111118"/>
+    </linearGradient>
+    <linearGradient id="text" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="icon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="540" y="120" width="120" height="120" rx="28" fill="url(#icon)"/>
+  <path d="M566 208v-56l24 32V152" fill="none" stroke="white" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="604" cy="194" r="7" fill="white"/>
+  <text x="600" y="330" font-family="Inter, sans-serif" font-size="52" font-weight="800" fill="#f4f4f5" text-anchor="middle">North &amp; Neural AI</text>
+  <text x="600" y="400" font-family="Inter, sans-serif" font-size="32" font-weight="600" fill="url(#text)" text-anchor="middle">Let AI Do All The Work</text>
+  <text x="600" y="460" font-family="Inter, sans-serif" font-size="24" font-weight="400" fill="#a1a1aa" text-anchor="middle">20+ done-for-you AI services. Place an order. Receive the deliverable.</text>
+</svg>

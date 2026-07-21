@@ -14,7 +14,7 @@ export default function CTA() {
               Ready When You Are
             </div>
             <h2 className="text-4xl lg:text-5xl font-extrabold text-base tracking-tight mb-5">
-              Let AI Do <span className="text-gradient">All The Work</span>
+              Ready to Get <span className="text-gradient">Started?</span>
             </h2>
             <p className="text-muted text-lg leading-relaxed max-w-xl mx-auto mb-9">
               Pick a service, place your order, and receive a finished deliverable in days.

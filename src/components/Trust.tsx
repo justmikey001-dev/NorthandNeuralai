@@ -2,9 +2,8 @@ import { useReveal } from '../hooks/useReveal';
 
 const STATS = [
   { value: '20+', label: 'Done-For-You Services' },
-  { value: '500+', label: 'Projects Delivered' },
-  { value: '72hrs', label: 'Average Delivery Time' },
-  { value: '4.9/5', label: 'Average Client Rating' },
+  { value: '24-72hr', label: 'Average Delivery Time' },
+  { value: '100%', label: 'Money-Back Guarantee' },
 ];
 
 const WHY_US = [
@@ -24,10 +23,10 @@ export default function Trust() {
     <section id="trust" className="relative py-24 lg:py-32 border-t border-base">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Stats */}
-        <div ref={statsRef} className="reveal grid grid-cols-2 lg:grid-cols-4 gap-5 mb-20">
+        <div ref={statsRef} className="reveal grid grid-cols-1 sm:grid-cols-3 gap-5 mb-20 max-w-3xl mx-auto">
           {STATS.map((stat) => (
             <div key={stat.label} className="glass-card p-6 text-center">
-              <div className="text-4xl lg:text-5xl font-extrabold text-gradient stat-glow mb-2">
+              <div className="text-3xl lg:text-4xl font-extrabold text-gradient stat-glow mb-2">
                 {stat.value}
               </div>
               <div className="text-muted text-xs lg:text-sm uppercase tracking-wide">

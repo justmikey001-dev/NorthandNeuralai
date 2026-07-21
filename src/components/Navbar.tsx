@@ -34,7 +34,6 @@ export default function Navbar({ navigate }: NavbarProps) {
     { label: 'Services', href: '#services' },
     { label: 'How It Works', href: '#how-it-works' },
     { label: 'Pricing', href: '#pricing' },
-    { label: 'Reviews', href: '#trust' },
   ];
 
   const goPage = (p: 'about' | 'faq' | 'home') => {
