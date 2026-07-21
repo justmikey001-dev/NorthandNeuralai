@@ -1,7 +1,7 @@
 const MAILTO = `mailto:hello.northandneural@gmail.com`;
 
 interface FooterProps {
-  navigate: (page: 'home' | 'about') => void;
+  navigate: (page: 'home' | 'about' | 'faq' | 'legal') => void;
 }
 
 export default function Footer({ navigate }: FooterProps) {
@@ -63,8 +63,30 @@ export default function Footer({ navigate }: FooterProps) {
           ))}
         </div>
 
+        {/* Extra links row */}
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mb-8 pb-8 border-b border-base">
+          <button
+            onClick={() => navigate('faq')}
+            className="text-muted hover:text-base text-sm transition-colors duration-200"
+          >
+            FAQ
+          </button>
+          <button
+            onClick={() => navigate('legal')}
+            className="text-muted hover:text-base text-sm transition-colors duration-200"
+          >
+            Terms &amp; Refund Policy
+          </button>
+          <button
+            onClick={() => navigate('about')}
+            className="text-muted hover:text-base text-sm transition-colors duration-200"
+          >
+            About
+          </button>
+        </div>
+
         {/* Bottom bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-base">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
             <p className="text-muted text-xs">
               © {year} North & Neural AI. All rights reserved.

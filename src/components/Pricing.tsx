@@ -51,6 +51,8 @@ const PLANS = [
   },
 ];
 
+const TALK_TO_US_HREF = `mailto:hello.northandneural@gmail.com?subject=Talk%20to%20Us&body=Hi%2C%20I%27d%20like%20to%20talk%20about%20a%20pricing%20plan.`;
+
 export default function Pricing() {
   return (
     <section id="pricing" className="relative py-24 lg:py-32 border-t border-base">
@@ -97,16 +99,24 @@ export default function Pricing() {
                   </li>
                 ))}
               </ul>
-              <a
-                href={plan.ctaHref}
-                className={`block text-center font-semibold px-6 py-3 rounded-xl text-sm transition-all duration-200 ${
-                  plan.highlight
-                    ? 'btn-gradient text-white'
-                    : 'glass-card border border-strong text-base hover:border-blue-500/40'
-                }`}
-              >
-                {plan.cta}
-              </a>
+              <div className="space-y-2.5">
+                <a
+                  href={plan.ctaHref}
+                  className={`block text-center font-semibold px-6 py-3 rounded-xl text-sm transition-all duration-200 ${
+                    plan.highlight
+                      ? 'btn-gradient text-white'
+                      : 'glass-card border border-strong text-base hover:border-blue-500/40'
+                  }`}
+                >
+                  {plan.cta}
+                </a>
+                <a
+                  href={TALK_TO_US_HREF}
+                  className="block text-center text-muted hover:text-base text-xs font-medium py-1.5 transition-colors duration-200"
+                >
+                  Talk to Us Directly
+                </a>
+              </div>
             </div>
           ))}
         </div>

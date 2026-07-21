@@ -6,20 +6,27 @@ import Services from './components/Services';
 import SurveyRecommender from './components/SurveyRecommender';
 import HowItWorks from './components/HowItWorks';
 import Pricing from './components/Pricing';
+import PriceCalculator from './components/PriceCalculator';
 import Trust from './components/Trust';
 import TalkToUs from './components/TalkToUs';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import About from './components/About';
+import FAQ from './components/FAQ';
+import Legal from './components/Legal';
 
-type Page = 'home' | 'about';
+type Page = 'home' | 'about' | 'faq' | 'legal';
 
 function App() {
   const [page, setPage] = useState<Page>('home');
 
   useEffect(() => {
     const handleHash = () => {
-      setPage(window.location.hash === '#about' ? 'about' : 'home');
+      const hash = window.location.hash.replace('#', '');
+      if (hash === 'about') setPage('about');
+      else if (hash === 'faq') setPage('faq');
+      else if (hash === 'legal') setPage('legal');
+      else setPage('home');
     };
     handleHash();
     window.addEventListener('hashchange', handleHash);
@@ -27,10 +34,10 @@ function App() {
   }, []);
 
   const navigate = (p: Page) => {
-    if (p === 'about') {
-      window.location.hash = 'about';
-    } else {
+    if (p === 'home') {
       window.location.hash = '';
+    } else {
+      window.location.hash = p;
     }
     setPage(p);
     window.scrollTo(0, 0);
@@ -43,6 +50,10 @@ function App() {
         <main>
           {page === 'about' ? (
             <About />
+          ) : page === 'faq' ? (
+            <FAQ />
+          ) : page === 'legal' ? (
+            <Legal />
           ) : (
             <>
               <Hero />
@@ -50,6 +61,7 @@ function App() {
               <SurveyRecommender />
               <HowItWorks />
               <Pricing />
+              <PriceCalculator />
               <Trust />
               <TalkToUs />
               <CTA />

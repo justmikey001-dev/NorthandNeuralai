@@ -16,7 +16,7 @@ const THEME_LABELS: Record<ThemeMode, string> = {
 };
 
 interface NavbarProps {
-  navigate: (page: 'home' | 'about') => void;
+  navigate: (page: 'home' | 'about' | 'faq' | 'legal') => void;
 }
 
 export default function Navbar({ navigate }: NavbarProps) {
@@ -37,13 +37,8 @@ export default function Navbar({ navigate }: NavbarProps) {
     { label: 'Reviews', href: '#trust' },
   ];
 
-  const goAbout = () => {
-    navigate('about');
-    setMenuOpen(false);
-  };
-
-  const goHome = () => {
-    navigate('home');
+  const goPage = (p: 'about' | 'faq' | 'home') => {
+    navigate(p);
     setMenuOpen(false);
   };
 
@@ -52,7 +47,7 @@ export default function Navbar({ navigate }: NavbarProps) {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}
-          <button onClick={goHome} className="flex items-center gap-2.5 flex-shrink-0">
+          <button onClick={() => goPage('home')} className="flex items-center gap-2.5 flex-shrink-0">
             <div className="w-8 h-8 rounded-lg btn-gradient flex items-center justify-center">
               <i className="fa-solid fa-brain text-white text-sm"></i>
             </div>
@@ -73,7 +68,13 @@ export default function Navbar({ navigate }: NavbarProps) {
               </a>
             ))}
             <button
-              onClick={goAbout}
+              onClick={() => goPage('faq')}
+              className="text-muted hover:text-base text-sm font-medium transition-colors duration-200"
+            >
+              FAQ
+            </button>
+            <button
+              onClick={() => goPage('about')}
               className="text-muted hover:text-base text-sm font-medium transition-colors duration-200"
             >
               About
@@ -124,7 +125,13 @@ export default function Navbar({ navigate }: NavbarProps) {
               </a>
             ))}
             <button
-              onClick={goAbout}
+              onClick={() => goPage('faq')}
+              className="text-left text-muted hover:text-base text-sm font-medium transition-colors"
+            >
+              FAQ
+            </button>
+            <button
+              onClick={() => goPage('about')}
               className="text-left text-muted hover:text-base text-sm font-medium transition-colors"
             >
               About
