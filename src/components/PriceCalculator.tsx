@@ -38,9 +38,9 @@ export default function PriceCalculator() {
 
   const orderHref = `${MAILTO}${encodeURIComponent(
     selectedItems
-      .map((i) => `${i.name} ${i.recurring ? `(x${days} days)` : ''} — $${i.lineTotal}`)
-      .join(', ')
-  )} Total: $${total}`;
+      .map((i) => `${i.name} ${i.recurring ? `(x${days} days)` : ''} — ${i.lineTotal}`)
+      .join(', ') + ` Total: ${total}`
+  )}`;
 
   return (
     <section id="calculator" className="relative py-24 lg:py-32 border-t border-base">
