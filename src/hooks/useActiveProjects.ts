@@ -8,9 +8,11 @@ export function useActiveProjects() {
   const [count, setCount] = useState<number | null>(null);
 
   useEffect(() => {
+    if (!supabase) return;
     let cancelled = false;
 
     async function load() {
+      if (!supabase) return;
       const { data, error } = await supabase
         .from('site_stats')
         .select('active_projects, last_updated')
@@ -23,7 +25,6 @@ export function useActiveProjects() {
       const lastUpdated = data.last_updated;
 
       if (lastUpdated < today) {
-        // New day — apply one random +/-1 adjustment, clamped 3–12
         const delta = Math.random() < 0.5 ? -1 : 1;
         const newCount = Math.min(MAX_PROJECTS, Math.max(MIN_PROJECTS, data.active_projects + delta));
 
